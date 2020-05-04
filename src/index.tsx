@@ -42,33 +42,37 @@ export default function App(): JSX.Element {
 
   return (
     <>
-      <h1>Book List App</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          placeholder="Add book!"
-          required
-        />
-        <button type="submit">Add Book</button>
-      </form>
+      <div className="container">
+        <h1>Book List App</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Add book!"
+            required
+          />
+          <button type="submit">Add Book</button>
+        </form>
 
-      <section>
-        {books.map((book: IBook, index: number) => (
-          <ul key={index}>
-            <li style={{ textDecoration: book.complete ? "line-through" : "" }}>
-              {book.text}{" "}
-              <button type="button" onClick={() => completeBook(index)}>
-                {book.complete ? "Incomplete" : "Complete"}
-              </button>
-              <button type="button" onClick={() => deleteBook(index)}>
-                Delete
-              </button>
-            </li>
-          </ul>
-        ))}
-      </section>
+        <section>
+          {books.map((book: IBook, index: number) => (
+            <div key={index}>
+              <p
+                style={{ textDecoration: book.complete ? "line-through" : "" }}
+              >
+                {book.text}{" "}
+                <button type="button" onClick={() => completeBook(index)}>
+                  {book.complete ? "Incomplete" : "Complete"}
+                </button>
+                <button type="button" onClick={() => deleteBook(index)}>
+                  Delete
+                </button>
+              </p>
+            </div>
+          ))}
+        </section>
+      </div>
     </>
   );
 }

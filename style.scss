@@ -1,0 +1,45 @@
+$primaryColor: #009688;
+$secondaryColor: #fff;
+$primaryFont: Arial, Helvetica, sans-serif;
+
+body {
+  font-family: $primaryFont;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 650px;
+  padding: 20px;
+
+  button {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+    transition: 0.45s all ease-in-out;
+
+    &:hover {
+      background-color: $primaryColor;
+      color: $secondaryColor;
+    }
+  }
+
+  section {
+    p {
+      animation: fadeIn 1.2s;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
